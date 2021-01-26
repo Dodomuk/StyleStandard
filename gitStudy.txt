@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 B와 A가 작성한 파일입니다.
+=======
+A와 B가 작성한 파일입니다.
+>>>>>>> 0a0f9146a033eececb718c130ec7669887b70366
 
 1. 계정 정보 등록
 	git config --global user.name '사용자이름'
@@ -23,3 +27,7 @@ B와 A가 작성한 파일입니다.
 	git reflog : 모든 commit 내역을 확인하는 reflog를 사용해서 모든 commit id 확인가능
 6. git revert
 	git revert <commit id> : 파일을 해당 commit 지점으로 되돌리고 revert log를 남긴다.
+7. 충돌 conflict
+	같은 라인에 여러명이 코드를 수정하면 auto merging 이 안된다.
+	사용할 코드를 선택하고 나머지는 제거해야한다. >> 충돌을 해결할 때 팀원에게 공유 할 것
+8. branch
