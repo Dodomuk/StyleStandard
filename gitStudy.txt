@@ -12,3 +12,6 @@
 		git add gitStudy.txt
 	git commit : 변경 내용을 기록
 		git commit -m '[A]처음으로 git commit 한 날'
+	git log : log 확인
+4. 파일을 수정하고 add, commit 해보기
+	git add . : 수정내역이 있는 모든 파일을 stagin area 추가
