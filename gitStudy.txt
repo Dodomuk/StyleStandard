@@ -6,4 +6,9 @@
 2. 폴더를 git이 관리하는 폴더로 만들기
 	git init
 	git checkout -b main : main브렌치를 만들어서 해당 브렌치로 이동
-	git status : 현재 상태 확인
+	git status : 현재 상태 확인	
+3. 파일을 생성하고 add, commit 해보기
+	git add : 변경이 있었던 파일을 staging area에 추가
+		git add gitStudy.txt
+	git commit : 변경 내용을 기록
+		git commit -m '[A]처음으로 git commit 한 날'
