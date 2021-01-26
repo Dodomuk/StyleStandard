@@ -15,3 +15,9 @@
 	git log : log 확인
 4. 파일을 수정하고 add, commit 해보기
 	git add . : 수정내역이 있는 모든 파일을 stagin area 추가
+5. git reset
+	git reset --soft <commit id> : 내역을 되돌리고 commit을 취소(staging 상태)
+	git reset --mixed <commit id>(기본) : 내역을 취소하고 staging도 취소
+	git reset --hard <commit id> : 해당 commit 지점으로 파일을 되돌린다.
+		reset을 하면 내역을 되돌리기 때문에, log명령어로 commit id를 볼 수 없다.
+	git reflog : 모든 commit 내역을 확인하는 reflog를 사용해서 모든 commit id 확인가능
