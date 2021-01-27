@@ -23,3 +23,9 @@
 		object-fit: cover;
     }
     
+    .faq__customer__title{
+    	background-color: #A9A9A9;
+    	height:4vh;
+    	margin:0.2vw;
+    }
+    
