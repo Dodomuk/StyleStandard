@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="notice.css" />
+    
+    <title>notice</title>
+   
+
+</head>
+<body>
+       
+    <ul class="navbar__menu">
+        <li class="navbar__menu__item active" data-link="#home">Home</li>
+        <li class="navbar__menu__item"><a href="#">메인페이지</a></li>
+        <li class="navbar__menu__item"><a href="notice.html">공지사항</a></li>
+        <li class="navbar__menu__item"><a href="#">고객센터</a></li>
+        <li class="navbar__menu__item"><a href="#">배송조회</a></li>
+        <li class="navbar__menu__item"><a href="#">스타일리스트</a></li>
+        </li>
+      </ul>
+      <div id="ex">
+      <h1 id="no_title">공지사항</h1>
+      <div class="noticeTable">
+    
+        <table>
+
+
+            <colgroup> 
+               <!--col태그는 표에서 하나 이상의 td태그에 대해 속성값을 정의-->
+               <!-- 여기서는 각 열의 크기를 지정-->
+                <col width="10%"/>
+                <col width="*"/>  <!--나머지 크기-->
+                <col width="14%"/>
+            </colgroup>
+
+            <!--테이블 머리말 부분-->
+            <thead>
+                <th scope="번호">번호</th> 
+                <th scope="제목">제목</th>
+                <th scope="등록일">등록일</th>
+
+            </thead>
+
+            <!--테이블 내용 부분-->
+            <tbody>
+                <tr>
+                    <td>33</td>
+                    <td class="article"><a href="#none">공지사항 내용</a></td>
+                    <td>2013-07-14</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td class="article"><a href="#none">공지사항 내용</a></td>
+                    <td>2013-07-14</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td class="article"><a href="#none">공지사항 내용</a></td>
+                    <td>2013-07-14</td>
+                </tr>
+            </tbody>
+
+           
+        </table>
+
+    </div>
+
+            <!-- admin 계정에만 권한 부여해주기// 일반계정사용자가 클릭하면 관리자만 이용할 수 있습니다 alert 창 띄워주기 -->
+            <button id="btn_write">글쓰기</button>
+    <form>
+        <div id='search_date'>
+            <select name='fruits'>
+                <option value='' selected>-- 선택 --</option>
+                <option value='week'>일주일</option>
+                <option value='month'>한 달</option>
+                <option value='whole'>전체</option>
+              </select>
+
+             
+                <input type="text" placeholder="검색을 해주세요.">
+                <button id="btn_find">찾기</button>
+            </div>
+            
+        
+    </form>
+
+</div>
+
+  
+</body>
+
+
+</html>
+<!--
+
+     <script type="text/javascript">
+            function $(selector, text){
+                if(text){
+                    document.querySelector(selector).innerHTML += `${text}<br>`;
+                }
+                return document.querySelector(selector);
+            }	
+        </script>
+
+        
+<script type="text/javascript">
+    $('#btn_write').addEventListener('click',(event)=>{
+        //클릭하면 티알을 넣어준다.
+        let trElement = document.createElement('tr');
+        $('tbody').appendChild(trElement);
+        
+        let inpList = document.querySelectorAll('#wrap_inp input');
+        //티디가 다섯개 들어가야댄다
+        for(let i=0; i<5; i++){
+            let tdElement = document.createElement('td');
+            if(i < 4){
+                tdElement.innerHTML += inpList.item(i).value;
+            }else{
+                tdElement.innerHTML += '삭제';
+                tdElement.addEventListener('click',(event)=>{
+                    tdElement.parentElement.remove();
+                });
+                
+                //onmouseover
+                    tdElement.addEventListener('mouseenter',(event)=>{
+                    tdElement.parentElement.style.backgroundColor = 'red';
+                    tdElement.parentElement.style.color = 'white';
+                })
+                
+                    tdElement.addEventListener('mouseleave',(event)=>{
+                    tdElement.parentElement.style.backgroundColor = 'white';
+                    tdElement.parentElement.style.color = 'black';
+                })
+                
+            }
+            
+            trElement.appendChild(tdElement);
+        
+        }
+    })
+    
+    $('#del-all').addEventListener('click',(e)=>{
+        $('tbody').innerHTML ='';
+    })
+
+    -->

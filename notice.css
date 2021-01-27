@@ -1,0 +1,63 @@
+#ex{
+    margin: 8%;
+}
+#no_title{
+    font-size: 26pt;
+}
+
+.noticeTable{
+    font-family:"맑은 고딕";
+    font-size:0.9em;
+}
+a{
+    text-decoration:none;
+    
+}
+a:hover{
+
+    text-decoration:underline;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    border-top:2px solid #8d8d8d;
+
+}
+th{
+    padding:10px 8px; /*padding: vertical horizontal;*/
+    background:#f9f9f9;
+    color:#666;
+    border-bottom:1px solid #8d8d8d;
+}
+
+td{
+    padding:10px 8px; /*padding: vertical horizontal;*/
+    text-align:center;
+    line-height:1.25em;
+    color:#666;
+    border-bottom:1px solid #8d8d8d;
+}
+
+td.article{ /*article 클래스가 적용된 열만 좌측 정렬*/
+    text-align:left;
+}
+
+#search_date{
+            line-height: 18vh;
+            margin:0px auto;
+}
+
+#btn_write{
+    margin-top: 22px;
+    left: 80%;
+    background-color: gray;
+    padding: 0.5%;
+    border: 1px solid;
+    float: right;
+}
+
+#btn_find{
+    left: 80%;
+    background-color: gray;
+    border: 1px solid;
+}
