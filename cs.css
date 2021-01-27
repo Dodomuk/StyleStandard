@@ -9,4 +9,17 @@
 		text-align:left;
 	}
 	
-    	
+    .question__details__title{
+    	text-align:left;
+    }
+    
+    .text-left{
+    	text-align:left;
+    }	
+    
+    .img__question{
+    	width: 150px;
+		height: 150px;
+		object-fit: cover;
+    }
+    
