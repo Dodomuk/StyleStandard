@@ -1103,21 +1103,21 @@ ol {
 
 .footer__text-widget ul li a {
 	font-size: 14px;
-	color: #c4c4c4;
+	color: white;
 	line-height: 30px;
 }
 
 .footer__text-widget .footer__widget-info li {
 	list-style: none;
 	font-size: 14px;
-	color: #c4c4c4;
+	color: white;
 	line-height: 42px;
 	position: relative;
 	padding-left: 35px;
 }
 
 .footer__text-widget .footer__widget-info li span {
-	color: #4c57d6;
+	color: purple;
 	position: absolute;
 	left: 0;
 	top: 14px;
@@ -1125,7 +1125,7 @@ ol {
 
 .footer__text-copyright {
 	font-size: 14px;
-	color: #c4c4c4;
+	color: white;
 	text-align: center;
 	padding: 25px 0;
 	border-top: 1px solid #2a2163;
