@@ -1,0 +1,40 @@
+
+#daum{ text-align: center; width:100%; margin-top: 70px; padding: 2%;}
+
+body{
+    position:absolute;
+    border-style: 1px solid;
+    margin: 4%;
+    padding :4%;
+    
+}
+
+.bbtd{  text-align: center; width:100%;
+
+}
+
+.bb{
+    margin-top: 30px; margin-right: 50px; margin-bottom: 30px; width:200px; height: 50px; font-weight: ; 
+    background-color: rgb(226, 226, 226); 
+    font-weight: bold;
+}
+
+button{
+    margin-right: 10px; 
+    background-color: rgb(226, 226, 226);
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+strong{
+    font-size: 15pt;
+}
+
+#su {
+    text-align: center; width: 100%; margin-top: 50px; margin-bottom: 50px;
+}
+
+a{
+    font-size: 22pt;  font-weight: bold;
+}
+
