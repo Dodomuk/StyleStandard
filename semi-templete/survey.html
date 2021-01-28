@@ -7,12 +7,11 @@
     <meta name="keywords" content="Deerhost, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>공지사항</title>
+    <title>설문조사</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap"
         rel="stylesheet">
-
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -22,11 +21,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-<<<<<<< Updated upstream
-    <link rel="stylesheet" href="css/kjy.css" type="text/css">
-=======
-    <link rel="stylesheet" href="css/jiyeon.css" type="text/css">
->>>>>>> Stashed changes
+    <link rel="stylesheet" href="css/jiyeon_survey.css" type="text/css">
 </head>
 
 <body>
@@ -63,13 +58,8 @@
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
             <ul>
-<<<<<<< Updated upstream
-                <li><a href="#"><span class="icon_chat_alt"></span> Live chat</a></li>
-                <li><a href="#"><span class="fa fa-user"></span> Login / Register</a></li>
-=======
                 <li><a href="#"><span class="icon_chat_alt"></span> 1:1 채팅</a></li>
                 <li><a href="#"><span class="fa fa-user"></span> 로그인 / 회원가입</a></li>
->>>>>>> Stashed changes
             </ul>
         </div>
     </div>
@@ -136,85 +126,78 @@
         <div class="container">
             <div class="row">
                 <div id="ex">
-                    <h3 id="NO"><strong>NOTICE</strong></h3>
-                    <div class="noticeTable">
-              
-                      <table width="1200pc">
-                          <div >
-                          <colgroup> 
-                             <!--col태그는 표에서 하나 이상의 td태그에 대해 속성값을 정의-->
-                             <!-- 여기서는 각 열의 크기를 지정-->
-                              <col style="width:10%;"/>
-                              <col width="*"/>  <!--나머지 크기-->
-                              <col style="width:14%;"/>
-                              <col style="width: 10%;"/>
-                          </colgroup>
-              
-                          <!--테이블 머리말 부분-->
-                          
-                            <thead>
-                                    <tr>
-                                        <th scope="번호">번호</th> 
-                                        <th scope="제목">제목</th>
-                                        <th scope="등록일">등록일</th>
-                                        <th scope="조회수">조회수</th>
-                                    </tr>
-                            </thead>
-                        
-                          <!--테이블 내용 부분-->
-                          <tbody>
-                             <c:choose>
-                                 <c:when test="${empty boarderlist}">
-                                     <tr><td colspan="5" align="center">데이터가 없습니다.</td></tr>
-                                 </c:when>
-                                 <c:when test="${!empty boarderlist}">
-                                     <c:forEach var="list" items="${boardList}">
-                                         <tr>
-                                            <td><c:out value="${list.bid}"/></td>
-                                            <td><c:out value="${list.title}"/></td>
-                                            <td><c:out value="${list.reg_id}"/></td>
-                                            <td><c:out value="${list.view_cnt}"/></td>
-                                            <td><c:out value="${list.reg_dt}"/></td>
-                                         </tr>
-                                     </c:forEach>
-                                 </c:when>
-                             </c:choose>
-                          </tbody>
-                        </div>
-                      </table>
-              
-                  </div>
-
-                  
-              
-                  <!-- Button Begin -->
-                    <section class="question-section spad">
-                        <div>
-                        <!-- admin 계정에만 권한 부여해주기// 일반계정사용자가 클릭하면 관리자만 이용할 수 있습니다 alert 창 띄워주기 -->
-                                    <form action="" class="question-form">
-                                        <button type="submit" class="site-btn">Write</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                    <form>
+                        <h1 id="NO"><strong>설문조사</strong></h1>
+                        <hr>
+                        <hr>
                         <form>
-                            <div id='search_date'>
-                                <select name='time'>
-                                    <option value='' selected>-- 선택 --</option>
-                                    <option value='week'>일주일</option>
-                                    <option value='month'>한 달</option>
-                                    <option value='whole'>전체</option>
-                                  </select>
+                            <table id="su">
+                                <tbody>
                     
+                                    <tr>
+                                        <td width=10%></td>
+                                        <td><a>키</a></td>
+                                        <td><input type="number" name="price" value="" placeholder="ex) 170"> cm</td>
+                                        <td><a>몸무게</a></td>
+                                        <td><input type="number" name="price" value="" placeholder="ex) 60"> kg</td>
+                                    </tr>
+                            </table>        
+                            <hr>
+                            <table>       
+                                    <tr>
+                                        <td><strong>사이즈 선택</strong> <br>( XS / S / M / L / XL / FREE )</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="su">
+                                <tr><td width=10%></td>
+                                    <td width=100px>셔츠 </td>
+                                    <td><button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button><button>FREE</button> </td>
+                                    <td width=10%></td>
+                                    <td width=100px>티셔츠 </td>
+                                    <td><button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button><button>FREE</button> </td>
                     
-                                    <input type="text" placeholder="검색을 해주세요.">
-                                    <button id="btn_find">찾기</button>
-                                </div>
+                                </tr>
+                                <tr><td width=10%></td>
+                                    <td width=100px>아우터 </td>
+                                    <td><button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button><button>FREE</button> </td>
+                                    <td width=10%></td>
+                                    <td width=100px>청바지 </td>
+                                    <td><button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button><button>FREE</button> </td>
                     
+                                </tr>
+                                <tr><td width=10%></td>
+                                    <td width=100px>바지 </td>
+                                    <td><button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button><button>FREE</button> </td>
+                                    <td width=10%></td>
+                                    <td width=100px>원피스 </td>
+                                    <td><button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button><button>FREE</button> </td>
                     
+                                </tr>
+                                <tr><td width=10%></td>
+                                    <td width=100px>치마 </td>
+                                    <td><button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button><button>FREE</button></td>
+                                </tr>    
+                                
+                            </table>
+                            <table>
+                                <tr><strong>언제 입고 싶나요?</strong></tr>
+                                <tr>
+                                    <td></td>
+                                    <td class='bbtd'><button class='bb'>일상</button><button class='bb'>기념일</button><button class='bb'>회사</button><button class='bb'>일상과 회사 모두 가능한</button></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr><strong>고객님의 체형이 어떻게 되시나요?</strong></tr>
+                                <tr>
+                                    <td></td>
+                                    <td class='bbtd'><button class='bb'>상체비만</button><button class='bb'>하체비만</button><button class='bb'>마름</button><button class='bb'>보통</button><button class='bb'>잘 모르겠어요</button></td>
+                                </tr>
+                            </table>
                         </form>
                     
-                    </div>
+                        <button id='daum'><strong>다음</strong></button>
+                    </form>
                     </section>
                 <!-- Button End -->       
 
