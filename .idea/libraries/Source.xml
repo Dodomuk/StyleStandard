@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Source">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/semi-templete/Source/SlickNav-master.zip!/" />
+      <root url="jar://$PROJECT_DIR$/semi-templete/Source/flation.zip!/" />
+      <root url="jar://$PROJECT_DIR$/semi-templete/Source/font-awesome-4.7.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/semi-templete/Source/OwlCarousel2-2.3.4.zip!/" />
+      <root url="jar://$PROJECT_DIR$/semi-templete/Source/sass.zip!/" />
+      <root url="jar://$PROJECT_DIR$/semi-templete/Source/bootstrap-4.4.1-dist.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
