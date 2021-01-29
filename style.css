@@ -176,7 +176,7 @@ ol {
 	font-size: 15px;
 	padding: 14px 30px 12px;
 	color: #ffffff;
-	background: #4c57d6;
+	background: #E68A8A;
 	text-transform: uppercase;
 	font-weight: 700;
 	border-radius: 50px;
@@ -272,7 +272,7 @@ ol {
 
 .header-section.header-normal {
 	position: relative;
-	background: #120851;
+	background: #FF9999;
 }
 
 .header-section.header-normal .header__logo {
@@ -809,7 +809,7 @@ ol {
 }
 
 .pricing__item h3 {
-	background: #120851;
+	background: #ff9999;
 	font-weight: 700;
 	color: #ffffff;
 	padding: 24px 0 20px;
@@ -1053,7 +1053,7 @@ ol {
 	position: relative;
 	z-index: 99;
 	padding-top: 140px;
-	margin-top: -225px;
+	margin-top: -25px;
 }
 
 .footer__text-about {
@@ -1204,7 +1204,7 @@ ol {
 
 .about__text .about__achievement .about__achieve__item span {
 	font-size: 30px;
-	color: #4c57d6;
+	color: #BF7373;
 }
 
 .about__text .about__achievement .about__achieve__item h4 {
@@ -1225,7 +1225,9 @@ ol {
 -----------------------*/
 
 .feature-section {
-	background: #f5f5f5;
+	background-image: url("../img/stylelist/back.jpg");
+	background-position: center;
+	background-size: cover;
 	padding-bottom: 70px;
 }
 
@@ -1342,7 +1344,9 @@ ol {
 -----------------------*/
 
 .testimonial-section {
-	background: #f5f5f5;
+	background-image: url("../img/stylelist/back.jpg");
+	background-position: center;
+	background-size: cover;
 }
 
 .testimonial__item {

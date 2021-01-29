@@ -272,7 +272,7 @@ ol {
 
 .header-section.header-normal {
 	position: relative;
-	background: #120851;
+	background: #FF9999;
 }
 
 .header-section.header-normal .header__logo {
@@ -809,7 +809,7 @@ ol {
 }
 
 .pricing__item h3 {
-	background: #120851;
+	background: #ff9999;
 	font-weight: 700;
 	color: #ffffff;
 	padding: 24px 0 20px;
@@ -1053,7 +1053,7 @@ ol {
 	position: relative;
 	z-index: 99;
 	padding-top: 140px;
-	margin-top: -225px;
+	margin-top: -25px;
 }
 
 .footer__text-about {
