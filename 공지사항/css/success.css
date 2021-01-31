@@ -1,0 +1,41 @@
+.bb {
+    width: 100%;
+    height: 100%;
+    float: left;
+  }
+  
+  .b {
+    float:left;
+    background-color: rgb(225, 225, 225);
+    width: 600px;
+    height: 500px;
+    margin-top: 200px;
+    margin-left: 33%;
+  
+  }
+  
+  .c {
+    margin-left: 200px;  
+    width:200px; 
+    border:1px solid black;
+    text-align: center;
+  
+    }
+  
+  .d {
+    margin-top: 50px;
+  }
+  
+  .fit-picture {
+    margin-top: 20px;
+      width: 250px;
+      margin-left: 20px;
+  
+  }
+  
+  .g {
+    width: 100px;
+    margin-left: 250px;
+    margin-top: 50px;
+  
+  }
