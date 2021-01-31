@@ -1,0 +1,25 @@
+.btn_type1{
+    display: inline-block;
+    width: 120px;
+    height: 45px;
+    margin-bottom: 10px;
+    background: #042e6f;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.btn_type2{
+    display: inline-block;
+    width: 120px;
+    height: 45px;
+    background: #fff;
+    text-align: center;
+    line-height: 45px;
+    color: #042e6f;
+    font-size: 13px;
+    border: 1px solid #042e6f;
+    box-sizing: border-box;
+    vertical-align: -1px;
+}
