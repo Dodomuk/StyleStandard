@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Deerhost Template">
+    <meta name="keywords" content="Deerhost, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>공지사항</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/kjy.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas__menu__overlay"></div>
+    <div class="offcanvas__menu__wrapper">
+        <div class="canvas__close">
+            <span class="fa fa-times-circle-o"></span>
+        </div>
+        <div class="offcanvas__logo">
+            <a href="#"><img src="img/logo.png" alt=""></a>
+        </div>
+        <nav class="offcanvas__menu mobile-menu">
+            <ul>
+                <li class="active"><a href="./index.html"></a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./hosting.html">Hosting</a></li>
+                <li><a href="#">Pages</a>
+                    <ul class="dropdown">
+                        <li><a href="./pricing.html">Pricing</a></li>
+                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        <li><a href="./404.html">404</a></li>
+                    </ul>
+                </li>
+                <li><a href="./blog.html">News</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__auth">
+            <ul>
+                <li><a href="#"><span class="icon_chat_alt"></span> Live chat</a></li>
+                <li><a href="#"><span class="fa fa-user"></span> Login / Register</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section header-normal">
+        <div class="header__info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__info-right">
+                            <ul>
+                                <li><a href="#"><span class="icon_chat_alt"></span> Live chat</a></li>
+                                <li><a href="#"><span class="fa fa-user"></span> Login / Register</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="./index.html">메인페이지</a></li>
+                            <li><a href="./about.html">스타일리스트</a></li>
+                            <li><a href="./hosting.html">스타일</a></li>
+                            <li class="active"><a href="#">고객센터</a>
+                                <ul class="dropdown" active="">
+                                    <li class="active"><a href="./pricing.html">공지사항</a></li>
+                                    <li><a href="./blog-details.html">1대1 문의</a></li>
+                                    <li><a href="./404.html">404</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    
+    <!-- Pricing Section End -->
+   
+      
+    <!-- Choose Plan Section Begin -->
+    <section class="choose-plan-section pricing-page spad">
+        <div class="container">
+            <div class="row">
+                <div id="ex">
+                    <h3 id="NO"><strong>NOTICE</strong></h3>
+                    <div class="noticeTable">
+              
+                      <table width="1200pc">
+                          <div >
+                          <colgroup> 
+                             <!--col태그는 표에서 하나 이상의 td태그에 대해 속성값을 정의-->
+                             <!-- 여기서는 각 열의 크기를 지정-->
+                              <col style="width:10%;"/>
+                              <col width="*"/>  <!--나머지 크기-->
+                              <col style="width:14%;"/>
+                              <col style="width: 10%;"/>
+                          </colgroup>
+              
+                          <!--테이블 머리말 부분-->
+                          
+                            <thead>
+                                    <tr>
+                                        <th scope="번호">번호</th> 
+                                        <th scope="제목">제목</th>
+                                        <th scope="등록일">등록일</th>
+                                        <th scope="조회수">조회수</th>
+                                    </tr>
+                            </thead>
+                        
+                          <!--테이블 내용 부분-->
+                          <tbody>
+                             <c:choose>
+                                 <c:when test="${empty boarderlist}">
+                                     <tr><td colspan="5" align="center">데이터가 없습니다.</td></tr>
+                                 </c:when>
+                                 <c:when test="${!empty boarderlist}">
+                                     <c:forEach var="list" items="${boardList}">
+                                         <tr>
+                                            <td><c:out value="${list.bid}"/></td>
+                                            <td><c:out value="${list.title}"/></td>
+                                            <td><c:out value="${list.reg_id}"/></td>
+                                            <td><c:out value="${list.view_cnt}"/></td>
+                                            <td><c:out value="${list.reg_dt}"/></td>
+                                         </tr>
+                                     </c:forEach>
+                                 </c:when>
+                             </c:choose>
+                          </tbody>
+                        </div>
+                      </table>
+              
+                  </div>
+              
+                  <!-- Button Begin -->
+                    <section class="question-section spad">
+                        <div>
+                        <!-- admin 계정에만 권한 부여해주기// 일반계정사용자가 클릭하면 관리자만 이용할 수 있습니다 alert 창 띄워주기 -->
+                                    <form action="" class="question-form">
+                                        <button type="submit" class="site-btn">Write</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <form>
+                            <div id='search_date'>
+                                <select name='time'>
+                                    <option value='' selected>-- 선택 --</option>
+                                    <option value='week'>일주일</option>
+                                    <option value='month'>한 달</option>
+                                    <option value='whole'>전체</option>
+                                  </select>
+                    
+                    
+                                    <input type="text" placeholder="검색을 해주세요.">
+                                    <button id="btn_find">찾기</button>
+                                </div>
+                    
+                    
+                        </form>
+                    
+                    </div>
+                    </section>
+                <!-- Button End -->       
+
+
+                  
+    <!-- Choose Plan Section End -->
+
+    
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="footer__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top-call">
+                            <h5>Need Help? Call us</h5>
+                            <h2>+1 175 946 2316 096</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top-auth">
+                            <h5>Join Now And Have Free Month Of Deluxe Hosting</h5>
+                            <a href="#" class="primary-btn">Log in</a>
+                            <a href="#" class="primary-btn sign-up">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__text set-bg" data-setbg="img/footer-bg.png">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="footer__text-about">
+                            <div class="footer__logo">
+                                <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida viverra maecen
+                                lacus vel facilisis. </p>
+                            <div class="footer__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer__text-widget">
+                            <h5>Company</h5>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Press & Media</a></li>
+                                <li><a href="#">News / Blogs</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer__text-widget">
+                            <h5>Hosting</h5>
+                            <ul>
+                                <li><a href="#">Web Hosting</a></li>
+                                <li><a href="#">Reseller Hosting</a></li>
+                                <li><a href="#">VPS Hosting</a></li>
+                                <li><a href="#">Dedicated Servers</a></li>
+                                <li><a href="#">Cloud Hosting</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="footer__text-widget">
+                            <h5>cONTACT US</h5>
+                            <ul class="footer__widget-info">
+                                <li><span class="fa fa-map-marker"></span> 500 South Main Street Los Angeles,<br />
+                                    ZZ-96110 USA</li>
+                                <li><span class="fa fa-mobile"></span> 125-711-811 | 125-668-886</li>
+                                <li><span class="fa fa-headphones"></span> Support.hosting@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__text-copyright">
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
