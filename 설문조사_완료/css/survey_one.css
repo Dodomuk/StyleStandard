@@ -1,0 +1,18 @@
+input[type=cmkg],
+input[type=text],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=number]{
+    padding: 0 20px;
+    width: 30%;
+    height: 38px;
+    font-size: 13px;
+    color: #7777;
+    border: 1px solid #ccc;
+    background: #fff;
+    transition: all 0.5s;
+    vertical-align: middle;
+    line-height: 38px;
+    box-sizing: border-box;
+}
