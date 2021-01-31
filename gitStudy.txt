@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+B와 A가 작성한 파일입니다.
+=======
+A와 B가 작성한 파일입니다.
+>>>>>>> 0a0f9146a033eececb718c130ec7669887b70366
+
+1. 계정 정보 등록
+	git config --global user.name '사용자이름'
+	git config --global user.email '사용자이메일'
+2. 폴더를 git이 관리하는 폴더로 만들기
+	git init
+	git checkout -b main : main브렌치를 만들어서 해당 브렌치로 이동
+	git status : 현재 상태 확인	
+3. 파일을 생성하고 add, commit 해보기
+	git add : 변경이 있었던 파일을 staging area에 추가
+		git add gitStudy.txt
+	git commit : 변경 내용을 기록
+		git commit -m '[A]처음으로 git commit 한 날'
+	git log : log 확인
+4. 파일을 수정하고 add, commit 해보기
+	git add . : 수정내역이 있는 모든 파일을 stagin area 추가
+5. git reset
+	git reset --soft <commit id> : 내역을 되돌리고 commit을 취소(staging 상태)
+	git reset --mixed <commit id>(기본) : 내역을 취소하고 staging도 취소
+	git reset --hard <commit id> : 해당 commit 지점으로 파일을 되돌린다.
+		reset을 하면 내역을 되돌리기 때문에, log명령어로 commit id를 볼 수 없다.
+	git reflog : 모든 commit 내역을 확인하는 reflog를 사용해서 모든 commit id 확인가능
+6. git revert
+	git revert <commit id> : 파일을 해당 commit 지점으로 되돌리고 revert log를 남긴다.
+7. 충돌 conflict
+	같은 라인에 여러명이 코드를 수정하면 auto merging 이 안된다.
+	사용할 코드를 선택하고 나머지는 제거해야한다. >> 충돌을 해결할 때 팀원에게 공유 할 것
+8. branch

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+	
+	.input-group{
+		margin-top:5vh;
+	}
+	
+	.shipping-text{
+		margin-top:5vh;
+		text-align:left;
+	}
+	
+    .question__details__title{
+    	text-align:left;
+    }
+    
+    .text-left{
+    	text-align:left;
+    }	
+    
+    .img__question{
+    	width: 150px;
+		height: 150px;
+		object-fit: cover;
+    }
+    
+    .faq__customer__title{
+    	background-color: #A9A9A9;
+    	height:4vh;
+    	margin:0.2vw;
+    }
+    
