@@ -34,10 +34,8 @@
 
 .container{
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
-
-
 table.type1 {
     border: 2px solid #ff9999;
     border-left: none;

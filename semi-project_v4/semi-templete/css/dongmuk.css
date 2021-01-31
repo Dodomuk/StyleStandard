@@ -27,3 +27,7 @@ hr{
 .nav-link{
     border-color: blue;
 }
+/* order 템플릿 */
+#table_name{
+    font-size: 20px;
+}
