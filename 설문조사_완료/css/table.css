@@ -80,7 +80,11 @@ table.type1 td{
     color: #777;
 }
 
+<<<<<<< Updated upstream
 input[type=tel],
+=======
+input[type=cmkg],
+>>>>>>> Stashed changes
 input[type=text],
 input[type=password],
 input[type=search],
