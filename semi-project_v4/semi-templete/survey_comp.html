@@ -21,8 +21,14 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/dongmuk.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/survey_comp.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,6 +37,7 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Offcanvas Menu Begin -->
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas__menu__overlay"></div>
     <div class="offcanvas__menu__wrapper">
@@ -43,7 +50,7 @@
         <nav class="offcanvas__menu mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">메인페이지</a></li>
-                <li><a href="./about.html">스타일리스트</a></li>
+                <li><a href="./style.html">스타일리스트</a></li>
                 <li><a href="./hosting.html">스타일</a></li>
                 <li><a href="#">고객센터</a>
                     <ul class="dropdown">
@@ -52,38 +59,38 @@
                         <li><a href="./404.html">404</a></li>
                     </ul>
                 </li>
-                <li><a href="">마이페이지</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
             <ul>
-                <li><a href="#"><span class="icon_chat_alt"></span> Live chat</a></li>
-                <li><a href="#"><span class="fa fa-user"></span> Login / Register</a></li>
+                <li><a href="#"><span class="icon_chat_alt"></span>1:1채팅</a></li>
+                <li><a href="#"><span class="fa fa-user"></span> 로그인/회원가입</a></li>
             </ul>
         </div>
-        <div class="offcanvas__info">
-            <ul>
-                <li><span class="icon_phone"></span> +1 123-456-7890</li>
-                <li><span class="fa fa-envelope"></span> Support@gmail.com</li>
-            </ul>
-        </div>
+
     </div>
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
     <header class="header-section header-normal">
         <div class="header__info">
-            <div class="container" style="display: flex; justify-content: flex-end;">
-                <div class="row"> 
-
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__info-left">
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
                         <div class="header__info-right">
                             <ul>
-                                <li><a href="#"><span class="icon_chat_alt"></span> Live chat</a></li>
-                                <li><a href="#"><span class="fa fa-user"></span> Login / Register</a></li>
+                                <li><a href="#"><span class="icon_chat_alt"></span>1:1 채팅</a></li>
+                                <li><a href="#"><span class="fa fa-user"></span>로그인/회원가입</a></li>
                             </ul>
                         </div>
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,7 +105,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a href="./index.html">메인페이지</a></li>
-                            <li><a href="./about.html">스타일리스트</a></li>
+                            <li><a href="./style.html">스타일리스트</a></li>
                             <li><a href="./hosting.html">스타일</a></li>
                             <li><a href="#">고객센터</a>
                                 <ul class="dropdown">
@@ -123,50 +130,94 @@
     <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="breadcrumb__option">
                         <a href="./index.html"><span class="fa fa-home"></span> Home</a>
-                        <span>회원가입</span>
+                        <span>설문조사</span>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="row">
-                <div class="col-sm">
-                    주문내역
-                  </div>
-                  <div class="col-sm">
-                    장바구니
-                  </div>
-                  <div class="col-sm">
-                    구매결정
-                  </div>
-                </div>  
             </div>
         </div>
     </div>
     <!-- Breadcrumb End -->
 
-    <div class="container">
-        <div class="row">
-
+    
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h3>설문조사가 완료 되었습니다!</h3>
+                    </div>
+                    <div class="sub-title">
+                        <h4>스타일리스트를 추천해드려요!</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="testimonial__slider owl-carousel">
+                    <div class="col-lg-4">
+                        <div class="testimonial__item">
+                            <img src="img/testimonial/testimonial-1.jpg" alt="">
+                            <h5>스타일리스트1</h5>
+                            <span>Designer</span>
+                            <p>Ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labuore
+                                et dolore magna aliqua.</p>
+                            <div class="testimonial__rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial__item">
+                            <img src="img/testimonial/testimonial-2.jpg" alt="">
+                            <h5>스타일리스트2</h5>
+                            <span>Designer</span>
+                            <p>Ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labuore
+                                et dolore magna aliqua.</p>
+                            <div class="testimonial__rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial__item">
+                            <img src="img/testimonial/testimonial-3.jpg" alt="">
+                            <h5>스타일리스트3</h5>
+                            <span>Designer</span>
+                            <p>Ipsum dolor sit amet, consectetur adipiscing elit, eiusmod tempor incididunt ut labuore
+                                et dolore magna aliqua.</p>
+                            <div class="testimonial__rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="skip">
+                <a href="./index.html"> skip
+            </div>
         </div>
-      </div>
+    </section>
+    <!-- Testimonial Section End -->
 
-    <ul class="nav flex-column col-md-2">
-        <li class="nav-item">
-          <a class="nav-link border border-danger rounded" aria-current="page" href="#">주문 내역</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link border border-danger rounded" href="#">장바구니</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link border border-danger rounded" href="#">구매 결정</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+    
+
+  
 
        <!-- Footer 동묵-->
        <footer class="footer-section">
@@ -194,7 +245,7 @@
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer__text-widget">
-                            <h5>cONTACT US</h5>
+                            <h5>CONTACT US</h5>
                             <ul class="footer__widget-info">
                                 <li><span class="fa fa-map-marker"></span> 서울특별시 강남구 테헤란로 10길 9 그랑프리 빌딩<br />
                                     </li>
@@ -222,6 +273,7 @@
         </div>
     </footer>
     <!-- Footer 동묵 끝 -->
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

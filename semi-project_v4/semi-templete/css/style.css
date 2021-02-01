@@ -151,10 +151,7 @@ ol {
 	background-position: top center;
 }
 
-.spad {
-	padding-top: 100px;
-	padding-bottom: 100px;
-}
+
 
 .text-white h1,
 .text-white h2,
@@ -182,17 +179,7 @@ ol {
 	border-radius: 50px;
 }
 
-.site-btn {
-	font-size: 14px;
-	color: #ffffff;
-	font-weight: 700;
-	text-transform: uppercase;
-	display: inline-block;
-	padding: 13px 30px 12px;
-	background: #4c57d6;
-	border: none;
-	border-radius: 50px;
-}
+
 
 /* Preloder */
 

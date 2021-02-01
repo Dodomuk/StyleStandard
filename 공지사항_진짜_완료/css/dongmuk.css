@@ -23,4 +23,14 @@ hr{
     font-size:50px;
     width:90px;
     color:purple;
+<<<<<<< HEAD:semi-project_v3/semi-templete/css/dongmuk.css
+=======
+}
+.nav-link{
+    border-color: blue;
+}
+/* order 템플릿 */
+#table_name{
+    font-size: 20px;
+>>>>>>> 8162332ff5a7d07c0c4a14cc2d176b4a94e7778b:semi-project_v4/semi-templete/css/dongmuk.css
 }

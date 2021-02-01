@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/dongmuk.css" type="text/css">
-    
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/dongmuk.css">
 </head>
 
 <body>
@@ -49,23 +49,17 @@
                     <ul class="dropdown">
                         <li><a href="./pricing.html">공지사항</a></li>
                         <li><a href="./blog-details.html">문의 사항</a></li>
-                        <li><a href="./404.html">FAQ</a></li>
+                        <li><a href="./404.html">404</a></li>
                     </ul>
                 </li>
-                <li><a href="mypage.html">마이페이지</a></li>
+                <li><a href="./blog.html">마이페이지</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
             <ul>
                 <li><a href="#"><span class="icon_chat_alt"></span>1:1 채팅</a></li>
-                <li><a href="#"><span class="fa fa-user"></span> 로그인 / 회원가입</a></li>
-            </ul>
-        </div>
-        <div class="offcanvas__info">
-            <ul>
-                <li><span class="icon_phone"></span> +1 123-456-7890</li>
-                <li><span class="fa fa-envelope"></span> Support@gmail.com</li>
+                <li><a href="#"><span class="fa fa-user"></span>로그인/회원가입</a></li>
             </ul>
         </div>
     </div>
@@ -74,21 +68,16 @@
     <!-- Header Section Begin -->
     <header class="header-section header-normal">
         <div class="header__info">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__info-left">
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
+            <div class="container" style="display: flex; justify-content: flex-end;">
+                <div class="row"> 
+
                         <div class="header__info-right">
                             <ul>
-                                <li><a href="#"><span class="icon_chat_alt"></span>1:1 채팅</a></li>
-                                <li><a href="#"><span class="fa fa-user"></span> 로그인 / 회원가입</a></li>
+                                <li><a href="#"><span class="icon_chat_alt"></span>1:1채팅</a></li>
+                                <li><a href="#"><span class="fa fa-user"></span>로그인/회원가입</a></li>
                             </ul>
                         </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -109,10 +98,10 @@
                                 <ul class="dropdown">
                                     <li><a href="./pricing.html">공지사항</a></li>
                                     <li><a href="./blog-details.html">문의 사항</a></li>
-                                    <li><a href="./404.html">FAQ</a></li>
+                                    <li><a href="./404.html">404</a></li>
                                 </ul>
                             </li>
-                            <li class="active"><a href="mypage.html">마이페이지</a></li>
+                            <li class="active"><a href="./blog.html">마이페이지</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -131,7 +120,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__option">
                         <a href="./index.html"><span class="fa fa-home"></span> Home</a>
-                        <span>Hosting</span>
+                        <span>공지사항 글쓰기</span>
                     </div>
                 </div>
             </div>
@@ -139,79 +128,83 @@
     </div>
     <!-- Breadcrumb End -->
 
-
-
-    <!-- Question Section Begin -->
-    <section class="question-section spad">
+    <!-- Blog Section Begin -->
+    <section class="pricing-section spad" style="padding-top: 60px
+    ;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="section-title">
-                        <h3>주문 내역</h3>
-                    </div>
-                </div>
-            </div>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">상품정보/주문번호</th>
-                    <th scope="col">주문일자</th>
-                    <th scope="col">주문 금액</th>
-                    <th scope="col">배송정보</th>
-                    <th scope="col">주문상태</th>
-                    <th scope="col">취소/환불여부</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>    
+
+            <form action="">
+                <h3>글쓰기</h3>
+        <table class="type1">
+        <caption></caption>
+        <colgroup>
+        <col style="width: 190px;">
+        <col>
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>제목</th>
+            <td><input type="text" style="width: 500px;"></td>
+        </tr>
+        <tr>
+            <th>작성자</th>
+            <td>admin</td>
+        </tr>
+        <tr>
+            <th>날짜</th>
+            <td>자동적으로 들어가게 기능 구현으로</td>
+        </tr>
+       
+        <tr>
+            <th>첨부파일</th>
+            <td>
+                <input type="file" name="FileName">
+            </td>
+        </tr>
+       
+        <tr>
+            <th>내 용</th>
+            <td>
+                <textarea name="ourtext" style="width:100%;border:1;overflow:visible;text-overflow:ellipsis;" rows=20 >텍스트</textarea>
+                
+            </td>
+        </tr>
+
+        <tr>
+            
+        </tr>
+
+       
+
+           
+        </tr>
         
+       
+    </tbody>
+    </table>
+
+
+                </div>
+            </form>
+            <div class="btn_center">
+                <a href="#" class="btn_type1" data-toggle="modal" data-target="#myModal">완료</a>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            게시글이 등록되었습니다.
+                        </div>
+                       
+            
+
+
+
+        </div>
     </section>
-    <!-- Question Section End -->
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center" style="margin-bottom: 15px;">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-  
-      <!-- Footer 동묵-->
- <footer class="footer-section">
+    <!-- Blog Section End -->
+
+   <!-- Footer 동묵-->
+   <footer class="footer-section">
     <div class="footer__text set-bg" data-setbg="img/hero/homebackground.png">
         <div class="container">
             <div class="row">
@@ -264,6 +257,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
 </footer>
 <!-- Footer 동묵 끝 -->
+
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
