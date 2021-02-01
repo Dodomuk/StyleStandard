@@ -1,0 +1,48 @@
+span{
+    display: inline-block;
+}
+
+tr{
+    height: 30px;
+}
+
+td{
+    text-align: center;
+}
+
+#search_date{
+    width: 32%;
+    text-align: center;
+    margin-left: 18%;
+}
+
+.choose-plan-section.pricing-page {
+	background: white;
+}
+*,::after,::before{
+    box-sizing:border-box;
+    margin-left: 0;
+
+}
+
+.spad {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.site-btn {
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 8px 8px 8px;
+	background: pink;
+	border: none;
+    border-radius: 50px;
+    float: right;
+}
+
+.all_one{
+    margin-left: 15%;
+}
