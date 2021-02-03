@@ -1,0 +1,19 @@
+
+
+.sub-title h4{
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+.skip{
+    float: right;
+}
+
+.footer__text {
+    position: relative;
+    z-index: 99;
+    padding-top: 140px;
+    margin-top: 0;
+}
+
+
