@@ -1,0 +1,41 @@
+/* 마이페이지  */
+.dropdown-item{
+    color: white;
+}
+hr{
+    margin:0;
+    background-color: white;
+}
+/* 메인페이지 */
+.primary-btn{
+    background-color: indianred;
+}
+.header__menu ul li a::after{
+    background-color: pink;
+}
+.hero__slider.owl-carousel .owl-dots button.active{
+    background-color: pink;
+}
+.hero__slider.owl-carousel .owl-dots button{
+    background-color: deeppink;
+}
+.footer__text-widget .footer__social .fa{
+    font-size:50px;
+    width:90px;
+    color:purple;
+}
+.nav-link{
+    border-color: blue;
+}
+/* order 템플릿 */
+#table_name{
+    font-size: 20px;
+}
+.btn-primary:hover{
+	background-color:pink;
+	   border-color: #ffc8f9;
+}
+.btn-primary.focus, .btn-primary:focus{
+    background-color: #ff9999;
+    border-color: #ffc8f9;
+}
