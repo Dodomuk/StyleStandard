@@ -1,0 +1,559 @@
+drop table tb_board;
+drop table tb_book;
+drop table tb_book_cart;
+drop table tb_book_reserves;
+drop table tb_code;
+drop table tb_file;
+drop table tb_member;
+drop table tb_rent_book;
+drop table tb_rent_history;
+drop table tb_rent_master;
+
+--------------------------------------------------------
+--  파일이 생성됨 - 화요일-3월-16-2021   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence SC_BC_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_BC_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100000 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SC_BORAD_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_BORAD_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100005 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SC_BRES_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_BRES_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100000 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SC_B_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_B_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100147 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SC_FILE_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_FILE_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100005 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SC_RB_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_RB_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100042 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SC_RH_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_RH_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100042 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SC_RM_IDX
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SC_RM_IDX"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 100063 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Table TB_BOARD
+--------------------------------------------------------
+
+  CREATE TABLE "TB_BOARD" 
+   (	"BD_IDX" VARCHAR2(30 CHAR), 
+	"USER_ID" VARCHAR2(30 CHAR), 
+	"REG_DATE" DATE DEFAULT sysdate, 
+	"TITLE" VARCHAR2(50 CHAR), 
+	"CONTENT" VARCHAR2(2000 CHAR), 
+	"IS_DEL" NUMBER DEFAULT 0
+   ) ;
+
+   COMMENT ON COLUMN "TB_BOARD"."BD_IDX" IS '게시글번호';
+   COMMENT ON COLUMN "TB_BOARD"."USER_ID" IS '작성자';
+   COMMENT ON COLUMN "TB_BOARD"."REG_DATE" IS '등록일자';
+   COMMENT ON COLUMN "TB_BOARD"."TITLE" IS '제목';
+   COMMENT ON COLUMN "TB_BOARD"."CONTENT" IS '게시글내용';
+   COMMENT ON COLUMN "TB_BOARD"."IS_DEL" IS '삭제여부';
+--------------------------------------------------------
+--  DDL for Table TB_BOOK
+--------------------------------------------------------
+
+  CREATE TABLE "TB_BOOK" 
+   (	"B_IDX" NUMBER, 
+	"ISBN" VARCHAR2(100 CHAR), 
+	"CATEGORY" CHAR(4 CHAR), 
+	"TITLE" VARCHAR2(100 CHAR), 
+	"AUTHOR" VARCHAR2(100 CHAR), 
+	"INFO" VARCHAR2(500 CHAR), 
+	"BOOK_AMT" NUMBER DEFAULT 1, 
+	"REG_DATE" DATE DEFAULT SYSDATE, 
+	"RENT_CNT" NUMBER(6,0) DEFAULT 0
+   ) ;
+
+   COMMENT ON COLUMN "TB_BOOK"."B_IDX" IS '도서번호';
+   COMMENT ON COLUMN "TB_BOOK"."ISBN" IS 'ISBN코드';
+   COMMENT ON COLUMN "TB_BOOK"."CATEGORY" IS '도서카테고리';
+   COMMENT ON COLUMN "TB_BOOK"."TITLE" IS '도서명';
+   COMMENT ON COLUMN "TB_BOOK"."AUTHOR" IS '저자';
+   COMMENT ON COLUMN "TB_BOOK"."INFO" IS '도서설명';
+   COMMENT ON COLUMN "TB_BOOK"."BOOK_AMT" IS '도서재고';
+   COMMENT ON COLUMN "TB_BOOK"."REG_DATE" IS '도서등록일자';
+   COMMENT ON COLUMN "TB_BOOK"."RENT_CNT" IS '대출횟수';
+--------------------------------------------------------
+--  DDL for Table TB_BOOK_CART
+--------------------------------------------------------
+
+  CREATE TABLE "TB_BOOK_CART" 
+   (	"BC_IDX" NUMBER, 
+	"B_IDX" NUMBER, 
+	"USER_ID" VARCHAR2(30 CHAR), 
+	"SESSION_ID" VARCHAR2(100 CHAR), 
+	"REG_DATE" DATE DEFAULT SYSDATE
+   ) ;
+
+   COMMENT ON COLUMN "TB_BOOK_CART"."BC_IDX" IS '장바구니번호';
+   COMMENT ON COLUMN "TB_BOOK_CART"."B_IDX" IS '도서번호';
+   COMMENT ON COLUMN "TB_BOOK_CART"."USER_ID" IS '사용자 아이디';
+   COMMENT ON COLUMN "TB_BOOK_CART"."SESSION_ID" IS 'JSESSION ID';
+   COMMENT ON COLUMN "TB_BOOK_CART"."REG_DATE" IS '등록일자';
+--------------------------------------------------------
+--  DDL for Table TB_BOOK_RESERVES
+--------------------------------------------------------
+
+  CREATE TABLE "TB_BOOK_RESERVES" 
+   (	"RES_IDX" NUMBER, 
+	"USER_ID" VARCHAR2(255), 
+	"B_IDX" NUMBER, 
+	"REG_DATE" DATE DEFAULT SYSDATE, 
+	"STATE" VARCHAR2(4 CHAR) DEFAULT 'RS00'
+   ) ;
+
+   COMMENT ON COLUMN "TB_BOOK_RESERVES"."RES_IDX" IS '예약번호';
+   COMMENT ON COLUMN "TB_BOOK_RESERVES"."USER_ID" IS '예약자아이디';
+   COMMENT ON COLUMN "TB_BOOK_RESERVES"."B_IDX" IS '도서번호';
+   COMMENT ON COLUMN "TB_BOOK_RESERVES"."REG_DATE" IS '등록일자';
+   COMMENT ON COLUMN "TB_BOOK_RESERVES"."STATE" IS '예약상태';
+--------------------------------------------------------
+--  DDL for Table TB_CODE
+--------------------------------------------------------
+
+  CREATE TABLE "TB_CODE" 
+   (	"CODE" VARCHAR2(4 CHAR), 
+	"UPPER_CD" VARCHAR2(4 CHAR), 
+	"INFO" VARCHAR2(300 CHAR), 
+	"REG_DATE" DATE DEFAULT SYSDATE
+   ) ;
+
+   COMMENT ON COLUMN "TB_CODE"."CODE" IS '카테고리코드';
+   COMMENT ON COLUMN "TB_CODE"."UPPER_CD" IS '상위카테고리코드';
+   COMMENT ON COLUMN "TB_CODE"."INFO" IS '카테고리정보';
+   COMMENT ON COLUMN "TB_CODE"."REG_DATE" IS '코드등록일자';
+--------------------------------------------------------
+--  DDL for Table TB_FILE
+--------------------------------------------------------
+
+  CREATE TABLE "TB_FILE" 
+   (	"F_IDX" NUMBER, 
+	"TYPE_IDX" VARCHAR2(30 CHAR), 
+	"ORIGIN_FILE_NAME" VARCHAR2(260 CHAR), 
+	"RENAME_FILE_NAME" VARCHAR2(260 CHAR), 
+	"SAVE_PATH" VARCHAR2(260 CHAR), 
+	"REG_DATE" DATE DEFAULT SYSDATE, 
+	"IS_DEL" NUMBER DEFAULT 0
+   ) ;
+
+   COMMENT ON COLUMN "TB_FILE"."F_IDX" IS '파일번호';
+   COMMENT ON COLUMN "TB_FILE"."TYPE_IDX" IS '게시판 인덱스';
+   COMMENT ON COLUMN "TB_FILE"."ORIGIN_FILE_NAME" IS '원본파일명';
+   COMMENT ON COLUMN "TB_FILE"."RENAME_FILE_NAME" IS '저장파일명';
+   COMMENT ON COLUMN "TB_FILE"."SAVE_PATH" IS '저장경로';
+   COMMENT ON COLUMN "TB_FILE"."REG_DATE" IS '파일등록일자';
+   COMMENT ON COLUMN "TB_FILE"."IS_DEL" IS '삭제여부';
+--------------------------------------------------------
+--  DDL for Table TB_MEMBER
+--------------------------------------------------------
+
+  CREATE TABLE "TB_MEMBER" 
+   (	"USER_ID" VARCHAR2(30 CHAR), 
+	"PASSWORD" VARCHAR2(60 CHAR), 
+	"EMAIL" VARCHAR2(50 CHAR), 
+	"GRADE" CHAR(4 CHAR) DEFAULT 'ME00', 
+	"TELL" VARCHAR2(15 CHAR), 
+	"REG_DATE" DATE DEFAULT SYSDATE, 
+	"RENTABLE_DATE" DATE DEFAULT SYSDATE, 
+	"IS_LEAVE" NUMBER DEFAULT 0
+   ) ;
+
+   COMMENT ON COLUMN "TB_MEMBER"."USER_ID" IS '회원 아이디';
+   COMMENT ON COLUMN "TB_MEMBER"."PASSWORD" IS '회원 비밀번호';
+   COMMENT ON COLUMN "TB_MEMBER"."EMAIL" IS '회원 이메일';
+   COMMENT ON COLUMN "TB_MEMBER"."GRADE" IS '회원 등급';
+   COMMENT ON COLUMN "TB_MEMBER"."TELL" IS '회원 전화번호';
+   COMMENT ON COLUMN "TB_MEMBER"."REG_DATE" IS '회원 등록일자';
+   COMMENT ON COLUMN "TB_MEMBER"."RENTABLE_DATE" IS '대출가능일자';
+   COMMENT ON COLUMN "TB_MEMBER"."IS_LEAVE" IS '탈퇴여부';
+--------------------------------------------------------
+--  DDL for Table TB_RENT_BOOK
+--------------------------------------------------------
+
+  CREATE TABLE "TB_RENT_BOOK" 
+   (	"RB_IDX" NUMBER, 
+	"RM_IDX" NUMBER, 
+	"B_IDX" NUMBER, 
+	"REG_DATE" DATE DEFAULT SYSDATE, 
+	"STATE" VARCHAR2(4 CHAR) DEFAULT 'RE00', 
+	"RETURN_DATE" DATE DEFAULT SYSDATE+7, 
+	"EXTENTION_CNT" NUMBER DEFAULT 0
+   ) ;
+
+   COMMENT ON COLUMN "TB_RENT_BOOK"."RB_IDX" IS '대출도서번호';
+   COMMENT ON COLUMN "TB_RENT_BOOK"."RM_IDX" IS '대출번호';
+   COMMENT ON COLUMN "TB_RENT_BOOK"."B_IDX" IS '도서번호';
+   COMMENT ON COLUMN "TB_RENT_BOOK"."REG_DATE" IS '대출일자';
+   COMMENT ON COLUMN "TB_RENT_BOOK"."STATE" IS '대출도서상태';
+   COMMENT ON COLUMN "TB_RENT_BOOK"."RETURN_DATE" IS '반납(예정)일자';
+   COMMENT ON COLUMN "TB_RENT_BOOK"."EXTENTION_CNT" IS '연장횟수';
+--------------------------------------------------------
+--  DDL for Table TB_RENT_HISTORY
+--------------------------------------------------------
+
+  CREATE TABLE "TB_RENT_HISTORY" 
+   (	"RH_IDX" NUMBER, 
+	"RM_IDX" NUMBER, 
+	"RB_IDX" NUMBER, 
+	"B_IDX" NUMBER, 
+	"REG_DATE" DATE, 
+	"STATE" CHAR(4 CHAR)
+   ) ;
+
+   COMMENT ON COLUMN "TB_RENT_HISTORY"."RH_IDX" IS '대출이력번호';
+   COMMENT ON COLUMN "TB_RENT_HISTORY"."RM_IDX" IS '대출번호';
+   COMMENT ON COLUMN "TB_RENT_HISTORY"."RB_IDX" IS '대출도서번호';
+   COMMENT ON COLUMN "TB_RENT_HISTORY"."B_IDX" IS '도서번호';
+   COMMENT ON COLUMN "TB_RENT_HISTORY"."REG_DATE" IS '이력등록일자';
+   COMMENT ON COLUMN "TB_RENT_HISTORY"."STATE" IS '대출상태';
+--------------------------------------------------------
+--  DDL for Table TB_RENT_MASTER
+--------------------------------------------------------
+
+  CREATE TABLE "TB_RENT_MASTER" 
+   (	"RM_IDX" NUMBER, 
+	"USER_ID" VARCHAR2(30 CHAR), 
+	"REG_DATE" DATE DEFAULT SYSDATE, 
+	"IS_RETURN" NUMBER DEFAULT 0, 
+	"TITLE" VARCHAR2(300 CHAR), 
+	"RENT_BOOK_CNT" NUMBER
+   ) ;
+
+   COMMENT ON COLUMN "TB_RENT_MASTER"."RM_IDX" IS '대출번호';
+   COMMENT ON COLUMN "TB_RENT_MASTER"."USER_ID" IS '회원 아이디';
+   COMMENT ON COLUMN "TB_RENT_MASTER"."REG_DATE" IS '대출일자';
+   COMMENT ON COLUMN "TB_RENT_MASTER"."IS_RETURN" IS '반납여부';
+   COMMENT ON COLUMN "TB_RENT_MASTER"."TITLE" IS '대출건제목';
+   COMMENT ON COLUMN "TB_RENT_MASTER"."RENT_BOOK_CNT" IS '대출도서권수';
+--------------------------------------------------------
+--  DDL for Index PK_TB_BOARD
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_BOARD" ON "TB_BOARD" ("BD_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_MEMBER
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_MEMBER" ON "TB_MEMBER" ("USER_ID") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_RENT_HISTORY
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_RENT_HISTORY" ON "TB_RENT_HISTORY" ("RH_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_RENT_BOOK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_RENT_BOOK" ON "TB_RENT_BOOK" ("RB_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_CODE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_CODE" ON "TB_CODE" ("CODE") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_FILE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_FILE" ON "TB_FILE" ("F_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_RENT_MASTER
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_RENT_MASTER" ON "TB_RENT_MASTER" ("RM_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_BOOK_CART
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_BOOK_CART" ON "TB_BOOK_CART" ("BC_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_BOOK_RESERVES
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_BOOK_RESERVES" ON "TB_BOOK_RESERVES" ("RES_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Index PK_TB_BOOK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PK_TB_BOOK" ON "TB_BOOK" ("B_IDX") 
+  ;
+--------------------------------------------------------
+--  DDL for Procedure PS_BOOK_RENT
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "PS_BOOK_RENT" 
+   (PS_B_IDX TB_RENT_BOOK.B_IDX%TYPE,
+    PS_RM_IDX TB_RENT_BOOK.RM_IDX%TYPE,
+    PS_USER_ID TB_RENT_MASTER.USER_ID%TYPE)
+ IS
+ BEGIN
+
+    SELECT B_IDX, RM_IDX, USER_ID
+    INTO PS_B_IDX, PS_RM_IDX, PS_USER_ID
+    FROM TB_RENT_BOOK B JOIN TB_RENT_MASTER M ON( B.RM_IDX = M.RM_IDX)
+    WHERE B_IDX = PS_B_IDX
+    END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure SP_RENT_EXTEND
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "SP_RENT_EXTEND" 
+(
+--매개변수로 넘어온 대출번호
+V_RM_IDX IN tb_rent_master.rm_Idx%type,
+--매개변수로 넘어온 대출도서번호
+V_RB_IDX IN TB_RENT_BOOK.rb_Idx%type
+)
+IS
+--도서번호 변수 선언
+PB_IDX tb_book.b_Idx%TYPE;
+
+BEGIN
+    --도서번호 변수에 대출 중인 도서의 도서번호를 초기화
+    SELECT B_IDX 
+    INTO PB_IDX 
+	FROM  TB_RENT_BOOK
+    WHERE RB_IDX = V_RB_IDX;            
+
+   UPDATE 
+	TB_RENT_BOOK
+	SET STATE = 'RE01'
+	,RETURN_DATE = RETURN_DATE + 7
+	,EXTENTION_CNT = EXTENTION_CNT + 1
+	WHERE RB_IDX = V_RB_IDX;   
+
+     --히스토리 테이블에 데이터 추가
+    INSERT INTO TB_RENT_HISTORY
+    VALUES(SC_RH_IDX.NEXTVAL, V_RM_IDX, V_RB_IDX, PB_IDX
+    ,SYSDATE, 'RE01');   
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure SP_RENT_INSERT
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "SP_RENT_INSERT" (
+	--대출할 도서번호
+	V_B_IDX TB_BOOK.B_IDX%TYPE
+)
+IS
+	PRM_IDX TB_RENT_MASTER.RM_IDX%TYPE;
+	PUSER_ID TB_MEMBER.user_ID%TYPE;
+BEGIN
+
+    PRM_IDX := SC_RM_IDX.CURRVAL;
+    SELECT USER_ID INTO PUSER_ID FROM TB_RENT_MASTER WHERE RM_IDX = PRM_IDX;
+    --대출가능일자 수정
+    UPDATE TB_MEMBER SET rentable_DATE = SYSDATE
+    WHERE user_ID = PUSER_ID;
+
+    --RENT_BOOK 테이블 입력
+    INSERT INTO TB_RENT_BOOK
+    VALUES(SC_RB_IDX.NEXTVAL,SC_RM_IDX.CURRVAL    
+    ,V_B_IDX, SYSDATE,'RE00'   
+    ,SYSDATE+7,0);
+
+    --RENT_HISTORY 테이블 입력
+    INSERT INTO TB_RENT_HISTORY
+    VALUES(SC_RH_IDX.NEXTVAL, SC_RM_IDX.CURRVAL
+    , SC_RB_IDX.CURRVAL,V_B_IDX,SYSDATE,'RE00');
+
+    --BOOK 테이블 대출 중 상태로 변경
+    UPDATE TB_BOOK B SET BOOK_AMT = BOOK_AMT - 1, rent_Cnt=rent_Cnt +1
+    WHERE b_Idx = V_B_IDX;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure SP_RENT_RETURN
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "SP_RENT_RETURN" 
+(
+--매개변수로 넘어온 대출번호
+V_RB_IDX IN TB_RENT_BOOK.rb_Idx%type
+)
+IS
+--대출 중인 도서 권수
+PRENT_CNT number;
+--도서번호
+PB_IDX tb_book.b_Idx%TYPE;
+--반납예정일
+PRETURN_DATE tb_rent_book.return_DATE%TYPE;
+--대출번호
+P_RM_IDX tb_rent_master.rm_Idx%type;
+--회원아이디
+P_USER_ID TB_MEMBER.USER_ID%type;
+
+BEGIN
+    --도서번호 변수, 반납일 변수에 대출 중인 도서의 도서번호, 반납일을 초기화
+    SELECT B_IDX, RETURN_DATE, RM_IDX, USER_ID, RENT_BOOK_CNT
+    INTO PB_IDX, PRETURN_DATE, P_RM_IDX, P_USER_ID,PRENT_CNT
+	FROM TB_RENT_BOOK RB
+    INNER JOIN TB_RENT_MASTER RM USING(RM_IDX)
+    WHERE RB_IDX = V_RB_IDX;
+
+    --반납된 도서 대출가능으로 변경
+    UPDATE TB_BOOK 
+    SET BOOK_AMT = BOOK_AMT + 1 
+    WHERE B_IDX = PB_IDX;
+
+    --연체일 경우 
+    --오늘날짜 + 연체일수*4 한 값을 TB_MEMBER의 RENTABLEDATE에 넣어줌     
+    IF TRUNC(PRETURN_DATE) < TRUNC(SYSDATE)
+    THEN 
+
+	 UPDATE TB_MEMBER 
+	    SET RENTABLE_DATE =        
+        SYSDATE + (TRUNC(SYSDATE) - TRUNC(PRETURN_DATE)) * 4
+	    where 
+	    user_Id = P_USER_ID;   
+
+    END IF;   
+
+    --대출상태, 반납일 수정
+   	UPDATE TB_RENT_BOOK 
+    SET STATE = 'RE03', RETURN_DATE = SYSDATE
+    WHERE RB_IDX = V_RB_IDX;
+
+	--tb_rent_master테이블에서 모든 도서 반납여부 확인후 isReturn 값 변경
+    select count(*) into PRENT_CNT from tb_rent_book           
+    where rm_Idx = P_RM_IDX AND STATE != 'RE03';
+
+    IF PRENT_CNT = 0
+    THEN 
+    	UPDATE TB_RENT_MASTER SET IS_RETURN = 1
+   		WHERE RM_IDX = P_RM_IDX;
+    END IF;
+
+     --히스토리 테이블에 데이터 추가
+    INSERT INTO TB_RENT_HISTORY
+    VALUES(SC_RH_IDX.NEXTVAL, P_RM_IDX, V_RB_IDX, PB_IDX
+    ,SYSDATE, 'RE03'); 
+  END;
+
+
+/
+--------------------------------------------------------
+--  Constraints for Table TB_BOOK_CART
+--------------------------------------------------------
+
+  ALTER TABLE "TB_BOOK_CART" ADD CONSTRAINT "PK_TB_BOOK_CART" PRIMARY KEY ("BC_IDX") ENABLE;
+  ALTER TABLE "TB_BOOK_CART" MODIFY ("B_IDX" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOOK_CART" MODIFY ("BC_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_BOOK_RESERVES
+--------------------------------------------------------
+
+  ALTER TABLE "TB_BOOK_RESERVES" ADD CONSTRAINT "PK_TB_BOOK_RESERVES" PRIMARY KEY ("RES_IDX") ENABLE;
+  ALTER TABLE "TB_BOOK_RESERVES" MODIFY ("B_IDX" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOOK_RESERVES" MODIFY ("RES_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_RENT_BOOK
+--------------------------------------------------------
+
+  ALTER TABLE "TB_RENT_BOOK" ADD CONSTRAINT "PK_TB_RENT_BOOK" PRIMARY KEY ("RB_IDX") ENABLE;
+  ALTER TABLE "TB_RENT_BOOK" MODIFY ("B_IDX" NOT NULL ENABLE);
+  ALTER TABLE "TB_RENT_BOOK" MODIFY ("RM_IDX" NOT NULL ENABLE);
+  ALTER TABLE "TB_RENT_BOOK" MODIFY ("RB_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_BOARD
+--------------------------------------------------------
+
+  ALTER TABLE "TB_BOARD" ADD CONSTRAINT "PK_TB_BOARD" PRIMARY KEY ("BD_IDX") ENABLE;
+  ALTER TABLE "TB_BOARD" MODIFY ("CONTENT" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOARD" MODIFY ("TITLE" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOARD" MODIFY ("REG_DATE" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOARD" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOARD" MODIFY ("BD_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_RENT_HISTORY
+--------------------------------------------------------
+
+  ALTER TABLE "TB_RENT_HISTORY" ADD CONSTRAINT "PK_TB_RENT_HISTORY" PRIMARY KEY ("RH_IDX") ENABLE;
+  ALTER TABLE "TB_RENT_HISTORY" MODIFY ("RB_IDX" NOT NULL ENABLE);
+  ALTER TABLE "TB_RENT_HISTORY" MODIFY ("RM_IDX" NOT NULL ENABLE);
+  ALTER TABLE "TB_RENT_HISTORY" MODIFY ("RH_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_CODE
+--------------------------------------------------------
+
+  ALTER TABLE "TB_CODE" ADD CONSTRAINT "PK_TB_CODE" PRIMARY KEY ("CODE") ENABLE;
+  ALTER TABLE "TB_CODE" MODIFY ("INFO" NOT NULL ENABLE);
+  ALTER TABLE "TB_CODE" MODIFY ("CODE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_FILE
+--------------------------------------------------------
+
+  ALTER TABLE "TB_FILE" ADD CONSTRAINT "PK_TB_FILE" PRIMARY KEY ("F_IDX") ENABLE;
+  ALTER TABLE "TB_FILE" MODIFY ("SAVE_PATH" NOT NULL ENABLE);
+  ALTER TABLE "TB_FILE" MODIFY ("RENAME_FILE_NAME" NOT NULL ENABLE);
+  ALTER TABLE "TB_FILE" MODIFY ("ORIGIN_FILE_NAME" NOT NULL ENABLE);
+  ALTER TABLE "TB_FILE" MODIFY ("TYPE_IDX" NOT NULL ENABLE);
+  ALTER TABLE "TB_FILE" MODIFY ("F_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_BOOK
+--------------------------------------------------------
+
+  ALTER TABLE "TB_BOOK" MODIFY ("AUTHOR" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOOK" MODIFY ("TITLE" NOT NULL ENABLE);
+  ALTER TABLE "TB_BOOK" ADD CONSTRAINT "PK_TB_BOOK" PRIMARY KEY ("B_IDX") ENABLE;
+  ALTER TABLE "TB_BOOK" MODIFY ("B_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_RENT_MASTER
+--------------------------------------------------------
+
+  ALTER TABLE "TB_RENT_MASTER" ADD CONSTRAINT "PK_TB_RENT_MASTER" PRIMARY KEY ("RM_IDX") ENABLE;
+  ALTER TABLE "TB_RENT_MASTER" MODIFY ("RENT_BOOK_CNT" NOT NULL ENABLE);
+  ALTER TABLE "TB_RENT_MASTER" MODIFY ("TITLE" NOT NULL ENABLE);
+  ALTER TABLE "TB_RENT_MASTER" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "TB_RENT_MASTER" MODIFY ("RM_IDX" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TB_MEMBER
+————————————————————————————
+
+  ALTER TABLE "TB_MEMBER" MODIFY ("IS_LEAVE" NOT NULL ENABLE);
+  ALTER TABLE "TB_MEMBER" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "TB_MEMBER" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "TB_MEMBER" ADD CONSTRAINT "PK_TB_MEMBER" PRIMARY KEY ("USER_ID") ENABLE;
+  ALTER TABLE "TB_MEMBER" MODIFY ("USER_ID" NOT NULL ENABLE);
+  
+  commit;
